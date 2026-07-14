@@ -1,0 +1,16 @@
+Required Libraries and Dependencies: -
+
+1. sudo apt update
+2. sudo apt install python3-opencv
+
+3. wget https://raw.githubusercontent.com/chuanqi305/MobileNet-
+SSD/master/deploy.prototxt
+
+4. wget https://raw.githubusercontent.com/chuanqi305/MobileNet-
+SSD/master/mobilenet_iter_73000.caffemodel
+
+5. sudo apt update
+6. sudo apt install -y libcamera-apps python3-libcamera python3-picamera2
+7. sudo apt install ffmpeg
+8. sudo apt install python3-gpiozero
+9. reboot
