@@ -47,6 +47,13 @@ box-shadow:0 5px 15px rgba(0,0,0,.25);
 margin-bottom:20px;
 
 }
+  
+.header img{
+
+width:120px;
+margin-bottom:15px;
+
+}
 
 .header h1{
 
@@ -235,87 +242,27 @@ animation:gpioBlink .8s infinite;
 
 }
 
-/* ==========================
-   Moving Signal
-========================== */
+/* Moving Signal */
 
-.signal-path{
+.signal{
 
 position:absolute;
 
 left:345px;
-top:420px;
+top:468px;
 
-width:420px;
-height:12px;
+width:0;
 
-}
+height:5px;
 
-/* Red glowing dot */
+background:red;
 
-.dot{
+border-radius:10px;
 
-position:absolute;
-
-width:12px;
-height:12px;
-
-background:#ff0000;
-
-border-radius:50%;
-
-box-shadow:0 0 15px red;
+animation:signalFlow 2s infinite;
 
 }
 
-/* Three dots */
-
-.dot1{
-
-animation:moveSignal 2s linear infinite;
-
-}
-
-.dot2{
-
-animation:moveSignal 2s linear infinite;
-animation-delay:.6s;
-
-}
-
-.dot3{
-
-animation:moveSignal 2s linear infinite;
-animation-delay:1.2s;
-
-}
-
-/* Raspberry Pi → Buzzer */
-
-@keyframes moveSignal{
-
-0%{
-
-left:415px;
-opacity:0;
-
-}
-
-10%{
-
-opacity:1;
-
-}
-
-100%{
-
-left:0;
-opacity:0;
-
-}
-
-}
-  
 /* Buzzer */
 
 .buzzer-led{
@@ -570,15 +517,7 @@ python3 Animal_Detection.py
 
 <div class="gpio-led"></div>
 
-<div class="signal-path">
-
-    <div class="dot dot1"></div>
-
-    <div class="dot dot2"></div>
-
-    <div class="dot dot3"></div>
-
-</div>
+<div class="signal"></div>
 
 <div class="buzzer-led"></div>
 
