@@ -235,130 +235,69 @@ animation:gpioBlink .8s infinite;
 
 }
 
-/* Moving Signal */
+/* ==========================
+   Moving Signal
+========================== */
 
-/* Signal Path */
-/* ===========================
-   Vertical Signal
-=========================== */
-
-.vertical-path{
+.signal-path{
 
 position:absolute;
 
-left:742px;
-top:430px;
+left:345px;
+top:438px;
 
-width:4px;
-height:38px;
+width:420px;
+height:12px;
 
 }
 
-.vdot{
+/* Red glowing dot */
+
+.dot{
 
 position:absolute;
-width:10px;
-height:10px;
+
+width:12px;
+height:12px;
 
 background:#ff0000;
 
 border-radius:50%;
 
-box-shadow:0 0 12px red;
-
-animation:moveDown 2s linear infinite;
+box-shadow:0 0 15px red;
 
 }
 
-@keyframes moveDown{
+/* Three dots */
 
-0%{
+.dot1{
 
-top:0;
-
-opacity:1;
+animation:moveSignal 2s linear infinite;
 
 }
 
-100%{
+.dot2{
 
-top:36px;
-
-opacity:0;
-
-}
+animation:moveSignal 2s linear infinite;
+animation-delay:.6s;
 
 }
 
-/* ===========================
-   Horizontal Signal
-=========================== */
+.dot3{
 
-.horizontal-path{
-
-position:absolute;
-
-left:330px;
-top:466px;
-
-width:415px;
-height:10px;
+animation:moveSignal 2s linear infinite;
+animation-delay:1.2s;
 
 }
 
-.hdot{
+/* Raspberry Pi → Buzzer */
 
-position:absolute;
-
-width:10px;
-height:10px;
-
-background:#ff0000;
-
-border-radius:50%;
-
-box-shadow:0 0 12px red;
-
-}
-
-.hdot1{
-
-animation:moveLeft 2s linear infinite;
-
-}
-
-.hdot2{
-
-animation:moveLeft 2s linear infinite;
-animation-delay:.5s;
-
-}
-
-.hdot3{
-
-animation:moveLeft 2s linear infinite;
-animation-delay:1s;
-
-}
-
-@keyframes moveLeft{
+@keyframes moveSignal{
 
 0%{
 
 left:415px;
-
 opacity:0;
-
-}
-
-10%{
-opacity:1;
-}
-
-100%{
-left:0;
-opacity:0;
-}
 
 }
 
@@ -371,13 +310,12 @@ opacity:1;
 100%{
 
 left:0;
-
 opacity:0;
 
 }
 
 }
-
+  
 /* Buzzer */
 
 .buzzer-led{
@@ -632,16 +570,14 @@ python3 Animal_Detection.py
 
 <div class="gpio-led"></div>
 
-<!-- Vertical wire -->
-<div class="vertical-path">
-    <div class="vdot vdot1"></div>
-</div>
+<div class="signal-path">
 
-<!-- Horizontal wire -->
-<div class="horizontal-path">
-    <div class="hdot hdot1"></div>
-    <div class="hdot hdot2"></div>
-    <div class="hdot hdot3"></div>
+    <div class="dot dot1"></div>
+
+    <div class="dot dot2"></div>
+
+    <div class="dot dot3"></div>
+
 </div>
 
 <div class="buzzer-led"></div>
