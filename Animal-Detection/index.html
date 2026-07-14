@@ -1,91 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AI Animal Detection | SimuSoft Technologies</title>
-<link rel="stylesheet" href="../assets/style.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,Helvetica,sans-serif;
+background:#f2f7ff;
+color:#333;
+line-height:1.6;
+
+}
+
+/* Header */
+
+.header{
+
+background:linear-gradient(135deg,#0d47a1,#2196f3);
+color:white;
+text-align:center;
+padding:50px 20px;
+
+}
+
+.header img{
+
+width:120px;
+margin-bottom:15px;
+
+}
+
+.header h1{
+
+font-size:42px;
+margin-bottom:10px;
+
+}
+
+.header p{
+
+font-size:20px;
+
+}
+
+/* Navigation Buttons */
+
+.buttons{
+
+text-align:center;
+margin:30px;
+
+}
+
+.btn{
+
+display:inline-block;
+background:#ff9800;
+color:white;
+padding:15px 30px;
+margin:10px;
+text-decoration:none;
+font-size:18px;
+border-radius:10px;
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+background:#e65100;
+
+}
+
+/* Card */
+
+.card{
+
+background:white;
+max-width:1000px;
+margin:25px auto;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
+
+}
+
+.card h2{
+
+color:#1565C0;
+margin-bottom:15px;
+
+}
+
+/* Table */
+
+table{
+
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+
+}
+
+th{
+
+background:#1565C0;
+color:white;
+padding:15px;
+
+}
+
+td{
+
+padding:15px;
+border:1px solid #ddd;
+
+}
+
+tr:nth-child(even){
+
+background:#f7f7f7;
+
+}
+
+/* List */
+
+ul{
+
+padding-left:25px;
+
+}
+
+li{
+
+margin:10px 0;
+
+}
+
+/* Image */
+
+.image{
+
+text-align:center;
+
+}
+
+.image img{
+
+width:90%;
+max-width:700px;
+border-radius:10px;
+border:4px solid #ddd;
+
+}
+
+/* Flow */
+
+.flow{
+
+text-align:center;
+font-size:22px;
+font-weight:bold;
+line-height:2;
+
+}
+
+/* Footer */
+
+footer{
+
+margin-top:40px;
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:25px;
+
+}
+
+</style>
+
 </head>
+
 <body>
-<header class="hero">
-  <img src="../assets/simusoft-logo.jpg" class="logo" alt="SimuSoft Logo">
-  <h1>🐾 AI Animal Detection</h1>
-  <p>Learn Artificial Intelligence using Raspberry Pi, OpenCV & Python</p>
-  <div class="buttons">
-    <a class="btn" href="Animal_Detection.py">📥 Download Code</a>
-    <a class="btn green" href="requirements.txt">📦 Requirements</a>
-    <a class="btn orange" href="libraries.txt">📚 Libraries</a>
-  </div>
-</header>
 
-<section class="card">
-<h2>🎯 Objective</h2>
-<p>Detect animals in real time using a Raspberry Pi and USB camera. When an animal is detected, GPIO18 activates a buzzer.</p>
-</section>
+<!-- Header -->
 
-<section class="card">
-<h2>🛠 Required Components</h2>
-<ul>
-<li>🍓 Raspberry Pi 4B</li>
-<li>📷 USB Camera</li>
-<li>🔊 Buzzer</li>
-<li>🔌 Jumper Wires</li>
-<li>🔋 5V Power Supply</li>
-</ul>
-</section>
+<div class="header">
 
-<section class="card">
-<h2>🔌 Connections</h2>
-<table>
-<tr><th>Component</th><th>Pin</th><th>Connection</th></tr>
-<tr><td>Buzzer</td><td>Positive (+)</td><td>GPIO18</td></tr>
-<tr><td>Buzzer</td><td>Negative (-)</td><td>GND</td></tr>
-<tr><td>USB Camera</td><td>USB</td><td>USB Port</td></tr>
-</table>
-</section>
+<img src="../assets/logo.png" alt="SimuSoft Logo">
 
-<section class="card">
-<h2>📋 Procedure</h2>
-<ol>
-<li>Scan the QR code.</li>
-<li>Download the project files.</li>
-<li>Open Terminal.</li>
-<li>Create virtual environment: <code>python3 -m venv mp-env</code></li>
-<li>Activate: <code>source mp-env/bin/activate</code></li>
-<li>Install libraries: <code>pip install -r requirements.txt</code></li>
-<li>Run: <code>python3 Animal_Detection.py</code></li>
-<li>Point the camera towards an animal.</li>
-<li>The detected animal name appears on screen.</li>
-<li>The buzzer sounds when an animal is detected.</li>
-</ol>
-</section>
+<h1>🐾 AI Animal Detection</h1>
 
-<section class="card">
-<h2>🤖 AI Working Flow</h2>
-<div class="flow">📷 Camera → 🧠 YOLO AI → 🐾 Animal Detected → 🔊 GPIO18 → 🚨 Buzzer</div>
-</section>
+<p>Artificial Intelligence using Raspberry Pi & OpenCV</p>
 
-<section class="card">
-<h2>🖼 Circuit Diagram</h2>
-<p>Place your <strong>circuit.png</strong> file in this folder.</p>
-<img class="circuit" src="circuit.png" alt="Circuit Diagram">
-</section>
-
-<section class="card">
-<h2>🌍 Applications</h2>
-<div class="grid">
-<div>🦁 Wildlife Monitoring</div>
-<div>🌳 Forest Protection</div>
-<div>🚜 Smart Farming</div>
-<div>🏫 STEM Education</div>
-<div>🏡 Smart Security</div>
-<div>🤖 AI Learning</div>
 </div>
-</section>
+
+<!-- Buttons -->
+
+<div class="buttons">
+
+<a class="btn" href="Animal_Detection.py">📥 Download Python Code</a>
+
+<a class="btn" href="requirements.txt">📦 Requirements</a>
+
+<a class="btn" href="libraries.txt">📚 Libraries</a>
+
+<a class="btn" href="../index.html">🏠 Home</a>
+
+</div>
+
+<!-- Objective -->
+
+<div class="card">
+
+<h2>🎯 Objective</h2>
+
+<p>
+
+This experiment demonstrates how Artificial Intelligence can detect animals in real time using a Raspberry Pi and a USB Camera. Whenever an animal is detected, the Raspberry Pi activates a buzzer to alert the user.
+
+</p>
+
+</div>
+
+<!-- Components -->
+
+<div class="card">
+
+<h2>🛠 Required Components</h2>
+
+<ul>
+
+<li>🍓 Raspberry Pi 4B</li>
+
+<li>📷 USB Camera</li>
+
+<li>🔊 Buzzer</li>
+
+<li>🔌 Jumper Wires</li>
+
+<li>🔋 5V Power Supply</li>
+
+</ul>
+
+</div>
+
+<!-- Connections -->
+
+<div class="card">
+
+<h2>🔌 Connections</h2>
+
+<table>
+
+<tr>
+
+<th>Component</th>
+
+<th>Pin</th>
+
+<th>Connection</th>
+
+</tr>
+
+<tr>
+
+<td>🔊 Buzzer</td>
+
+<td>Positive (+)</td>
+
+<td>GPIO 18</td>
+
+</tr>
+
+<tr>
+
+<td>🔊 Buzzer</td>
+
+<td>Negative (−)</td>
+
+<td>GND</td>
+
+</tr>
+
+<tr>
+
+<td>📷 USB Camera</td>
+
+<td>USB Port</td>
+
+<td>Raspberry Pi USB Port</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- Procedure -->
+
+<div class="card">
+
+<h2>📋 Procedure</h2>
+
+<ol>
+
+<li>Scan the QR code provided in the manual.</li>
+
+<li>Download the project files.</li>
+
+<li>Open the Terminal on Raspberry Pi.</li>
+
+<li>Install all required libraries.</li>
+
+<li>Create a virtual environment.</li>
+
+<li>Activate the environment.</li>
+
+<li>Create a new Python file named <b>Animal_Detection.py</b>.</li>
+
+<li>Copy and paste the source code.</li>
+
+<li>Save the file.</li>
+
+<li>Run the Python program.</li>
+
+<li>The camera starts automatically.</li>
+
+<li>The AI continuously detects animals.</li>
+
+<li>When an animal is detected, the buzzer turns ON.</li>
+
+</ol>
+
+</div>
+
+<!-- Commands -->
+
+<div class="card">
+
+<h2>💻 Terminal Commands</h2>
+
+<pre>
+
+python3 -m venv mp-env
+
+source mp-env/bin/activate
+
+pip install -r requirements.txt
+
+python3 Animal_Detection.py
+
+</pre>
+
+</div>
+
+<!-- Circuit -->
+
+<div class="card">
+
+<h2>🔧 Circuit Diagram</h2>
+
+<div class="image">
+
+<img src="circuit.png" alt="Circuit Diagram">
+
+</div>
+
+</div>
+
+<!-- AI Flow -->
+
+<div class="card">
+
+<h2>🤖 How AI Works</h2>
+
+<div class="flow">
+
+📷 Camera
+
+<br>⬇<br>
+
+🧠 AI Model
+
+<br>⬇<br>
+
+🐶 Animal Detected
+
+<br>⬇<br>
+
+🔊 GPIO18 Activated
+
+<br>⬇<br>
+
+🚨 Buzzer Sounds
+
+</div>
+
+</div>
+
+<!-- Output -->
+
+<div class="card">
+
+<h2>🖥 Expected Output</h2>
+
+<ul>
+
+<li>Camera preview starts.</li>
+
+<li>Animals are detected in real time.</li>
+
+<li>Detected animal name is displayed.</li>
+
+<li>Buzzer sounds whenever an animal is detected.</li>
+
+</ul>
+
+</div>
+
+<!-- Applications -->
+
+<div class="card">
+
+<h2>🌍 Applications</h2>
+
+<ul>
+
+<li>🦁 Wildlife Monitoring</li>
+
+<li>🌳 Forest Protection</li>
+
+<li>🚜 Smart Farming</li>
+
+<li>🏫 AI Learning Projects</li>
+
+<li>🏡 Security Systems</li>
+
+</ul>
+
+</div>
+
+<!-- Troubleshooting -->
+
+<div class="card">
+
+<h2>⚠ Troubleshooting</h2>
+
+<table>
+
+<tr>
+
+<th>Problem</th>
+
+<th>Solution</th>
+
+</tr>
+
+<tr>
+
+<td>Camera not detected</td>
+
+<td>Reconnect the USB camera and restart the Raspberry Pi.</td>
+
+</tr>
+
+<tr>
+
+<td>Buzzer not working</td>
+
+<td>Check GPIO18 and GND wiring.</td>
+
+</tr>
+
+<tr>
+
+<td>Module not found</td>
+
+<td>Install missing Python libraries.</td>
+
+</tr>
+
+<tr>
+
+<td>Permission denied</td>
+
+<td>Activate the virtual environment before running the program.</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- Fun Fact -->
+
+<div class="card">
+
+<h2>💡 Did You Know?</h2>
+
+<p>
+
+Modern AI models can recognize dozens of different animals from a live camera feed in real time, making them useful for wildlife conservation, agriculture, and smart security systems.
+
+</p>
+
+</div>
+
+<!-- Footer -->
 
 <footer>
+
 <h3>SimuSoft Technologies Pvt. Ltd.</h3>
-<p>AI • Robotics • IoT • Embedded Systems • Industry 4.0</p>
+
+<p>
+
+AI • Robotics • IoT • Embedded Systems • Industry 4.0
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 SimuSoft Technologies Pvt. Ltd. All Rights Reserved.
+
+</p>
+
 </footer>
+
 </body>
+
 </html>
