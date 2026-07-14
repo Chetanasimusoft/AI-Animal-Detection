@@ -238,27 +238,80 @@ animation:gpioBlink .8s infinite;
 /* Moving Signal */
 
 /* Signal Path */
+/* ===========================
+   Vertical Signal
+=========================== */
 
-.signal-path{
+.vertical-path{
 
 position:absolute;
 
-left:345px;
-top:463px;
+left:742px;
+top:430px;
 
-width:420px;
+width:4px;
+height:38px;
+
+}
+
+.vdot{
+
+position:absolute;
+width:10px;
+height:10px;
+
+background:#ff0000;
+
+border-radius:50%;
+
+box-shadow:0 0 12px red;
+
+animation:moveDown 2s linear infinite;
+
+}
+
+@keyframes moveDown{
+
+0%{
+
+top:0;
+
+opacity:1;
+
+}
+
+100%{
+
+top:36px;
+
+opacity:0;
+
+}
+
+}
+
+/* ===========================
+   Horizontal Signal
+=========================== */
+
+.horizontal-path{
+
+position:absolute;
+
+left:330px;
+top:466px;
+
+width:415px;
 height:10px;
 
 }
 
-/* Moving Dot */
-
-.dot{
+.hdot{
 
 position:absolute;
 
-width:12px;
-height:12px;
+width:10px;
+height:10px;
 
 background:#ff0000;
 
@@ -268,41 +321,49 @@ box-shadow:0 0 12px red;
 
 }
 
-/* First Dot */
+.hdot1{
 
-.dot1{
-
-animation:moveSignal 2s linear infinite;
+animation:moveLeft 2s linear infinite;
 
 }
 
-/* Second Dot */
+.hdot2{
 
-.dot2{
-
-animation:moveSignal 2s linear infinite;
-
-animation-delay:.6s;
+animation:moveLeft 2s linear infinite;
+animation-delay:.5s;
 
 }
 
-/* Third Dot */
+.hdot3{
 
-.dot3{
-
-animation:moveSignal 2s linear infinite;
-
-animation-delay:1.2s;
+animation:moveLeft 2s linear infinite;
+animation-delay:1s;
 
 }
 
-@keyframes moveSignal{
+@keyframes moveLeft{
 
 0%{
 
 left:415px;
 
 opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+left:0;
+
+opacity:0;
+
+}
 
 }
 
@@ -576,14 +637,16 @@ python3 Animal_Detection.py
 
 <div class="gpio-led"></div>
 
-<div class="signal-path">
+<!-- Vertical wire -->
+<div class="vertical-path">
+    <div class="vdot vdot1"></div>
+</div>
 
-    <div class="dot dot1"></div>
-
-    <div class="dot dot2"></div>
-
-    <div class="dot dot3"></div>
-
+<!-- Horizontal wire -->
+<div class="horizontal-path">
+    <div class="hdot hdot1"></div>
+    <div class="hdot hdot2"></div>
+    <div class="hdot hdot3"></div>
 </div>
 
 <div class="buzzer-led"></div>
