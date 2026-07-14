@@ -35,11 +35,16 @@ text-align:center;
 padding:50px 20px;
 
 }
+  
+.logo{
 
-.header img{
-
-width:120px;
-margin-bottom:15px;
+width:280px;
+max-width:90%;
+background:white;
+padding:12px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+margin-bottom:20px;
 
 }
 
@@ -189,7 +194,195 @@ text-align:center;
 padding:25px;
 
 }
+/* ===================================
+   Animated Circuit
+=================================== */
 
+.circuit-container{
+
+position:relative;
+width:894px;
+max-width:100%;
+margin:auto;
+
+}
+
+.circuit-image{
+
+width:100%;
+border-radius:10px;
+display:block;
+
+}
+
+/* GPIO LED */
+
+.gpio-led{
+
+position:absolute;
+
+left:745px;
+top:425px;
+
+width:14px;
+height:14px;
+
+background:red;
+
+border-radius:50%;
+
+animation:gpioBlink .8s infinite;
+
+}
+
+/* Moving Signal */
+
+/* Signal Path */
+
+.signal-path{
+
+position:absolute;
+
+left:345px;
+top:463px;
+
+width:420px;
+height:10px;
+
+}
+
+/* Moving Dot */
+
+.dot{
+
+position:absolute;
+
+width:12px;
+height:12px;
+
+background:#ff0000;
+
+border-radius:50%;
+
+box-shadow:0 0 12px red;
+
+}
+
+/* First Dot */
+
+.dot1{
+
+animation:moveSignal 2s linear infinite;
+
+}
+
+/* Second Dot */
+
+.dot2{
+
+animation:moveSignal 2s linear infinite;
+
+animation-delay:.6s;
+
+}
+
+/* Third Dot */
+
+.dot3{
+
+animation:moveSignal 2s linear infinite;
+
+animation-delay:1.2s;
+
+}
+
+@keyframes moveSignal{
+
+0%{
+
+left:0;
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+left:415px;
+
+opacity:0;
+
+}
+
+}
+
+/* Buzzer */
+
+.buzzer-led{
+
+position:absolute;
+
+left:330px;
+top:452px;
+
+width:18px;
+height:18px;
+
+background:#222;
+
+border-radius:50%;
+
+animation:buzzerBlink .8s infinite;
+
+}
+
+@keyframes signalFlow{
+
+0%{
+
+width:0;
+
+}
+
+100%{
+
+width:415px;
+
+}
+
+}
+
+@keyframes gpioBlink{
+
+50%{
+
+background:lime;
+
+box-shadow:0 0 20px lime;
+
+}
+
+}
+
+@keyframes buzzerBlink{
+
+50%{
+
+background:red;
+
+transform:scale(1.4);
+
+box-shadow:0 0 25px red;
+
+}
+
+}
 </style>
 
 </head>
@@ -200,7 +393,9 @@ padding:25px;
 
 <div class="header">
 
-<img src="../assets/logo.png" alt="SimuSoft Logo">
+<img src="../assets/simusoft-logo.jpg"
+     class="logo"
+     alt="SimuSoft Logo">
 
 <h1>🐾 AI Animal Detection</h1>
 
@@ -374,13 +569,24 @@ python3 Animal_Detection.py
 
 <h2>🔧 Circuit Diagram</h2>
 
-<p>Move your mouse over the circuit.</p>
-
-<div class="image">
+<div class="circuit-container">
 
 <img src="circuit.png"
-class="circuit"
-alt="Circuit Diagram">
+     class="circuit-image">
+
+<div class="gpio-led"></div>
+
+<div class="signal-path">
+
+    <div class="dot dot1"></div>
+
+    <div class="dot dot2"></div>
+
+    <div class="dot dot3"></div>
+
+</div>
+
+<div class="buzzer-led"></div>
 
 </div>
 
